@@ -40,6 +40,10 @@
 #define ONLOW_WE 	0x0C
 #define ONHIGH_WE 	0x0D
 
+//PWM RANGE & FREQ
+#define PWMRANGE 1023
+#define PWMFREQ  1000
+
 //GPIO FUNCTIONS
 #define INPUT 			0x00
 #define OUTPUT 			0x01
@@ -97,6 +101,8 @@ unsigned long pulseIn(uint8_t pin, uint8_t state, unsigned long timeout);
 void isr_init(void);
 void attachInterrupt(uint8_t, void (*)(void), int mode);
 void detachInterrupt(uint8_t);
+
+void analogWrite(uint8_t pin, uint16_t value);//0-PWMRANGE
 
 int analogRead(uint8_t);
 
